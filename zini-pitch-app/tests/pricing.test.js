@@ -20,3 +20,8 @@ import {STATIONS} from '../src/data/stations.js';
 describe('trajeto',()=>{const [a,,,p]=STATIONS;
  it('destino igual à devolução não cria trecho extra',async()=>{const r=await computePlan(a,p,p,0,false);expect(r.legs).toBe(1);expect(r.total).toBe(22.86)});
  it('parada soma só tempo',async()=>{const r=await computePlan(a,p,p,60,false);expect(r.distanceKm).toBe(9.7);expect(r.total).toBe(44.46)})});
+describe('desbloqueio sem rota',()=>{
+ it('inicia sem plano nem devolução e devolve em estação escolhida',()=>{const s=R.fresh();s.cnh='APPROVED';s.card={};
+  expect(R.start(s,'ZN-04',null,null).error).toBeUndefined();R.advance(s,10);expect(s.rental.km).toBeCloseTo(5);
+  expect(R.finish(s).error).toMatch(/Escolha/);expect(R.finish(s,'PKS').receipt.to).toBe('PKS');expect(s.rental).toBeNull()});
+ it('sem CNH continua bloqueado',()=>{const s=R.fresh();s.card={};expect(R.start(s,'ZN-04',null,null).error).toMatch(/CNH/)})});

@@ -34,3 +34,6 @@ Verificação visual em navegador não foi feita. Ver limites na resposta de ent
 
 ## Busca de destino e Google (opcional)
 Digite o destino na tela "Calcular rota": a rota e o preço são calculados automaticamente. Sem chave, a busca usa os lugares do app e o OpenStreetMap (Nominatim, só Brasília) e a rota usa OSRM. Com chave Google, a busca usa Places (New) e distância e tempo vêm da Routes API com trânsito atual. Crie `.env.local` com `VITE_GOOGLE_MAPS_API_KEY=...` (veja `.env.example`), ative faturamento, restrinja a chave por referenciador HTTP e às APIs Places e Routes. Variável de frontend não é lugar seguro para segredo, e a restrição da chave é obrigatória. Os termos do Google limitam o uso de seus dados com mapas de terceiros, por isso o traçado do Google não é desenhado no mapa OpenStreetMap. O valor mostrado é sempre uma média estimada.
+
+## Desbloqueio sem rota
+Na estação, "Desbloquear" inicia a utilização direto (exige CNH aprovada e cartão, ambos pelo menu). A estação de devolução é escolhida ao devolver. Sem rota planejada, a distância simulada usa 30 km/h (simSpeedKmh em src/config.js). O cálculo de rota é opcional e serve só como estimativa.
