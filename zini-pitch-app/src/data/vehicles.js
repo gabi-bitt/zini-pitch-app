@@ -1,0 +1,1 @@
+export const initialVehicles=()=>[38,62,74,85,100].map((b,i)=>({id:'ZN-0'+(i+1),plate:['ZIN1A01','ZIN2B02','ZIN3C03','ZIN4D04','ZIN5E05'][i],model:'Hatch elétrico compacto',battery:b,stationId:['AER','SHS','SHN','PKS','PON'][i],status:'AVAILABLE'}));

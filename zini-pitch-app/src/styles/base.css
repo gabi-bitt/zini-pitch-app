@@ -1,0 +1,15 @@
+:root{--color-brand:#1800AD;--ink:#16161d;--gray:#e6e7ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,sans-serif;color:var(--ink);overflow-x:hidden}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;height:56px;padding:env(safe-area-inset-top) 12px 0;background:#fff;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--gray)}
+header img{height:40px}header .tag{font-size:12px;background:var(--gray);padding:2px 8px;border-radius:4px;margin-left:auto}
+button{min-height:44px;padding:0 14px;border:1px solid var(--color-brand);background:#fff;color:var(--color-brand);font-weight:700;border-radius:6px;cursor:pointer}
+button.p{background:var(--color-brand);color:#fff}button:disabled{opacity:.4}:focus-visible{outline:3px solid #7a66ff;outline-offset:2px}
+#map{position:fixed;inset:56px 0 0 0}
+#sheet{position:fixed;z-index:1000;left:0;right:0;bottom:0;max-height:55vh;overflow:auto;background:#fff;padding:16px 16px calc(16px + env(safe-area-inset-bottom));border-top:3px solid var(--color-brand)}
+@media(min-width:900px){#sheet{top:56px;left:auto;width:400px;max-height:none;border-top:0;border-left:1px solid var(--gray)}#map{right:400px}}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.bar{height:8px;background:var(--gray)}.bar i{display:block;height:100%;background:var(--color-brand)}
+h2{margin:0 0 4px;font-size:18px}small{color:#555}.err{color:#a00020;font-weight:600}img.car{width:100%;max-height:120px;object-fit:cover}
+.mk{background:#1800AD;color:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:3px solid #fff;font-weight:800;box-shadow:0 1px 4px #0006}
+#drawer{position:fixed;z-index:1100;top:56px;left:0;bottom:0;width:min(300px,86vw);background:#fff;border-right:1px solid var(--gray);padding:12px;display:none;flex-direction:column;gap:6px;overflow:auto}
+#drawer.open{display:flex}#drawer button{text-align:left;border-color:var(--gray)}
+select,input{min-height:44px;width:100%;font:inherit;margin:4px 0 10px}.pl{border-bottom:1px solid var(--gray);padding:8px 0}
